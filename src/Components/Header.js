@@ -6,8 +6,8 @@ const Header = (props) => {
       <Logo src="/images/logo.svg" alt="" />
       <NavMenu>
         <a href="/home">
-          <img src="/images/home-icon.svg" alt="HOME" />
-          <span>Home</span>
+          <img src="/images/home-icon.svg" alt="home" />
+          <span>HOME</span>
         </a>
       </NavMenu>
     </Nav>
@@ -54,9 +54,32 @@ const NavMenu = styled.div`
   padding: 0px;
   position: relative;
   margin-right: auto;
-  margin:left: 25px 
+  margin:left: 25px;
 
-     @media (max-width: 768px) {
+  a {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+
+    img {
+      height: 20px;
+      min-width: 20px;
+      width: 20px;
+      z-index: auto;
+    }
+  }
+
+  span {
+    color: rgb(249, 249, 249);
+    font-size: 13px;
+    letter-spacing: 1.42px;
+    line-height: 1.08;
+    padding: 2px 0px;
+    white-space: nowrap;
+    postion: relative;
+  }
+
+  @media (max-width: 768px) {
     display: none;
   }
 `;
