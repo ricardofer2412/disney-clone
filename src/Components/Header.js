@@ -9,6 +9,26 @@ const Header = (props) => {
           <img src="/images/home-icon.svg" alt="home" />
           <span>HOME</span>
         </a>
+        <a href="/home">
+          <img src="/images/search-icon.svg" alt="home" />
+          <span>SEARCH</span>
+        </a>
+        <a href="/home">
+          <img src="/images/watchlist-icon.svg" alt="home" />
+          <span>WATCHLIST</span>
+        </a>
+        <a href="/home">
+          <img src="/images/original-icon.svg" alt="home" />
+          <span>ORIGINALS</span>
+        </a>
+        <a href="/home">
+          <img src="/images/movie-icon.svg" alt="home" />
+          <span>MOVIES</span>
+        </a>
+        <a href="/home">
+          <img src="/images/series-icon.svg" alt="home" />
+          <span>SERIES</span>
+        </a>
       </NavMenu>
     </Nav>
   );
