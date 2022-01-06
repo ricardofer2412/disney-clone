@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { auth, provider } from "../firebase";
-
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { userDispatch, userSelector } from "react-redux";
+import {
+  selectUserEmail,
+  selectUserPhoto,
+  selectUserName,
+} from "../features/user/userSlice";
 const Header = (props) => {
   const handleAuth = () => {
     auth
