@@ -38,33 +38,40 @@ const Header = (props) => {
   return (
     <Nav>
       <Logo src="/images/logo.svg" alt="" />
-      <NavMenu>
-        <a href="/home">
-          <img src="/images/home-icon.svg" alt="home" />
-          <span>HOME</span>
-        </a>
-        <a href="/home">
-          <img src="/images/search-icon.svg" alt="home" />
-          <span>SEARCH</span>
-        </a>
-        <a href="/home">
-          <img src="/images/watchlist-icon.svg" alt="home" />
-          <span>WATCHLIST</span>
-        </a>
-        <a href="/home">
-          <img src="/images/original-icon.svg" alt="home" />
-          <span>ORIGINALS</span>
-        </a>
-        <a href="/home">
-          <img src="/images/movie-icon.svg" alt="home" />
-          <span>MOVIES</span>
-        </a>
-        <a href="/home">
-          <img src="/images/series-icon.svg" alt="home" />
-          <span>SERIES</span>
-        </a>
-      </NavMenu>
-      <Login onClick={handleAuth}>LOGIN</Login>
+      <h2>Test</h2>
+      {!username ? (
+        <Login onClick={handleAuth}>Login</Login>
+      ) : (
+        <>
+          <NavMenu>
+            <a href="/home">
+              <img src="/images/home-icon.svg" alt="home" />
+              <span>HOME</span>
+            </a>
+            <a href="/home">
+              <img src="/images/search-icon.svg" alt="home" />
+              <span>SEARCH</span>
+            </a>
+            <a href="/home">
+              <img src="/images/watchlist-icon.svg" alt="home" />
+              <span>WATCHLIST</span>
+            </a>
+            <a href="/home">
+              <img src="/images/original-icon.svg" alt="home" />
+              <span>ORIGINALS</span>
+            </a>
+            <a href="/home">
+              <img src="/images/movie-icon.svg" alt="home" />
+              <span>MOVIES</span>
+            </a>
+            <a href="/home">
+              <img src="/images/series-icon.svg" alt="home" />
+              <span>SERIES</span>
+            </a>
+          </NavMenu>
+          <UserImg src={userPhoto} alt={username} />
+        </>
+      )}
     </Nav>
   );
 };
@@ -173,4 +180,7 @@ const NavMenu = styled.div`
     display: none;
   } */
 `;
+
+const UserImg = styled.img` 
+heightL 100%`;
 export default Header;
