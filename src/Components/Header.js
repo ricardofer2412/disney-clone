@@ -1,23 +1,40 @@
 import styled from "styled-components";
 import { auth, provider } from "../firebase";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { userDispatch, userSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   selectUserEmail,
   selectUserPhoto,
   selectUserName,
+  setUserLoginDetails,
 } from "../features/user/userSlice";
 const Header = (props) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const username = useSelector(selectUserName);
+  const userPhoto = useSelector(selectUserPhoto);
+
   const handleAuth = () => {
     auth
       .signInWithPopup(provider)
       .then((result) => {
-        console.log(result);
+        setUser(result.user);
       })
       .catch((error) => {
         alert(error.message);
       });
   };
+
+  const setUser = (user) => {
+    dispatch(
+      setUserLoginDetails({
+        name: user.displayname,
+        email: user.email,
+        photo: user.photoURL,
+      })
+    );
+  };
+
   return (
     <Nav>
       <Logo src="/images/logo.svg" alt="" />
